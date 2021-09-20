@@ -9,7 +9,7 @@ from .models import Poll
 @admin.register(Poll)
 class PollAdmin(admin.ModelAdmin):
     fields = ["question", "tenant", "created_by", "pub_date"]
-    readonly_fields = ["pub_date"]
+    readonly_fields = ["pub_date", "updated_at"]
 
     def formfield_for_foreignkey(self, db_field, request: Optional[HttpRequest], **kwargs: Any):
         #if db_field.name == 'tenant':

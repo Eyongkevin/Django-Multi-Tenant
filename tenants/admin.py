@@ -18,7 +18,7 @@ from django.utils.translation import ugettext_lazy as _
 
 @admin.register(Tenant)
 class TenantAdmin(admin.ModelAdmin):
-    fields = ['name', 'subdomain_prefix']
+    fields = ['name', 'age', 'subdomain_prefix']
 
     def get_queryset(self, request: HttpRequest) -> QuerySet:
         #set_tenant_schema_for_request(request)
