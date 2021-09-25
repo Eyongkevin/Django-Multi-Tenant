@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 
 @admin.register(Tenant)
 class TenantAdmin(admin.ModelAdmin):
-    fields = ['name', 'age', 'subdomain_prefix']
+    fields = ['name', 'age', 'gender', 'subdomain_prefix']
 
     def get_queryset(self, request: HttpRequest) -> QuerySet:
 
