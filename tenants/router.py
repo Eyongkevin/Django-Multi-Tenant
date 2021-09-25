@@ -1,4 +1,4 @@
-from config.middleware.middlewares import get_current_db_name
+from tenants.middleware.middlewares import get_current_db_name
 
 class TenantRouter:
     def db_for_read(self, model, **hints):
