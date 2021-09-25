@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'config.middleware.middlewares.TenantMiddleware',
+    'tenants.middleware.middlewares.TenantMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -89,13 +89,30 @@ DATABASES = {
         "PASSWORD": "caystiapp2021#unicef",
         "HOST": "127.0.0.1",
         "PORT": "5432",
+    },
+    "thor": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "tenant_thor_db",
+        "USER": "caysti_user",
+        "PASSWORD": "caystiapp2021#unicef",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
+    },
+    "potter": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "tenant_potter_db",
+        "USER": "caysti_user",
+        "PASSWORD": "caystiapp2021#unicef",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
     }
+
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
 }
-
+DATABASE_ROUTERS = ["tenants.router.TenantRouter"]
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

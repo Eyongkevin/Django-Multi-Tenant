@@ -16,16 +16,16 @@ def get_tenants_map():
         "potter.polls.local": "potter",
     }
 
-def tenant_schema_from_request(request):
+def tenant_db_from_request(request):
     hostname = hostname_from_request(request)
     return get_tenants_map().get(hostname)
 
-def set_tenant_schema(schema):
-    with connection.cursor() as cursor:
-        cursor.execute(f"SET search_path to {schema}")
+# def set_tenant_schema(schema):
+#     with connection.cursor() as cursor:
+#         cursor.execute(f"SET search_path to {schema}")
 
 
-def set_tenant_schema_for_request(request):
-    schema = tenant_schema_from_request(request)
-    set_tenant_schema(schema)
+# def set_tenant_schema_for_request(request):
+#     schema = tenant_schema_from_request(request)
+#     set_tenant_schema(schema)
     
