@@ -5,7 +5,7 @@ from polls.serializers import PollSerializer
 from rest_framework import viewsets
 
 class PollViewSet(viewsets.ModelViewSet):
-    queryset = Poll.objects.all()
+    queryset = Poll.objects.select_related('created_by').all()
     serializer_class = PollSerializer
 
     def get_queryset(self):

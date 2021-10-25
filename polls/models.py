@@ -6,6 +6,7 @@ from django.utils.timezone import now
 # Create your models here.
 class Poll(TenantAwareModel):
     question = models.CharField(max_length=150)
+    references = models.JSONField(null=True, blank=True) # ref, name
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     pub_date = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)

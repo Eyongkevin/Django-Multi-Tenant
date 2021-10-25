@@ -45,3 +45,13 @@ python manage.py createsuperuser_tenant
         --email=?
         --database=?
 ```
+
+### Example of some superusers created
+1. Thor
+
+    Username: `thor`
+    password: `thortonyp`
+2. Potter
+
+    Username: `potter`
+    password: `pottertonyp`
